@@ -18,7 +18,7 @@ const Home = () => {
       axios.get(`https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/reverseGeocode?f=pjson&featureTypes=&location=${longitude},${latitude}`).then((res) => {
         setCity(res.data.address.City)
         setRegion(res.data.address.region)
-        const urls = "https://gavell.herokuapp.com/post"
+        const urls = "https://gavel-server.onrender.com/post"
         axios.post(urls, {email: user.email, title, body:`Help! My location is ${res.data.address.City},${res.data.address.Region}. Latitude ${latitude}, and longitude ${longitude}!`}).then((res) => {
           if(res.status == false) {
             alert("Not sent")
@@ -30,7 +30,7 @@ const Home = () => {
     })
   }
   const [user, setUser] = useState("")
-  const url = "https://gavell.herokuapp.com/dashboard";
+  const url = "https://gavel-server.onrender.com/dashboard";
   useEffect(() => {
       document.title = "Gavel || Home";
         const token = localStorage.getItem("token");

@@ -12,7 +12,7 @@ const Dashboard = () => {
         document.title = "Gavel || Dashboard";
     })
     const [user, setUser] = useState("")
-    const url = "https://gavell.herokuapp.com/dashboard";
+    const url = "https://gavel-server.onrender.com/dashboard";
     const navigate = useNavigate();
     useEffect(() => {
         const token = localStorage.getItem("token");
@@ -30,7 +30,7 @@ const Dashboard = () => {
         } else {
         if(res.data.userType == "regUser") {
             setUser(res.data.userDetails);
-            const urls = "https://gavell.herokuapp.com/post/all";
+            const urls = "https://gavel-server.onrender.com/post/all";
             axios.get(urls).then((res) => {
                 if(res.data.status == false) {
                 setError(res.data.message);

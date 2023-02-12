@@ -11,7 +11,7 @@ const CreatePost = () => {
         document.title = "Gavel || Dashboard";
     })
     const [user, setUser] = useState("")
-    const url = "https://gavell.herokuapp.com/dashboard";
+    const url = "https://gavel-server.onrender.com/dashboard";
     const navigate = useNavigate();
     useEffect(() => {
         const token = localStorage.getItem("token");
@@ -41,7 +41,7 @@ const CreatePost = () => {
     const [body, setBody] = useState("");
 
     const createPost = () => {
-      axios.post("https://gavell.herokuapp.com/post", {email: user.email, title, body}).then((res) => {
+      axios.post("https://gavel-server.onrender.com/post", {email: user.email, title, body}).then((res) => {
         if(res.data.status == false) {
           setError(res.data.message);
         } else {

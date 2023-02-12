@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 
 const useAuth = (setUser) => {
-  const url = "https://gavell.herokuapp.com/dashboard";
+  const url = "https://gavel-server.onrender.com/dashboard";
   // let status, user, userType;
   // const [status, setStatus] = useState(false)
   // const [user, setUser] = useState("")

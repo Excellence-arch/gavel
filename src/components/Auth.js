@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 
 const Auth = ({user}) => {
-  const url = "https://gavell.herokuapp.com/dashboard";
+  const url = "https://gavel-server.onrender.com/dashboard";
   const navigate = useNavigate();
   useEffect(() => {
     const token = localStorage.getItem("token");

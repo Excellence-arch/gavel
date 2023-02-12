@@ -29,9 +29,9 @@ const Login = () => {
             setError(false);
             let url;
             if(lawyer == true) {
-                url = "https://gavell.herokuapp.com/attorneys/login"
+                url = "https://gavel-server.onrender.com/attorneys/login"
             } else {
-                url = "https://gavell.herokuapp.com/users/login"
+                url = "https://gavel-server.onrender.com/users/login"
             }
             axios.post(url, {email, password}).then((res) => {
                 setIsLoading(false);
